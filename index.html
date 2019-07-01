@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> JavaScript Projekty </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/clock.css">
+    <link rel="stylesheet" href="style/flex.css">
+    <link rel="stylesheet" href="style/timer.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="img/gen/NL.png" class="logo" alt="logoLN">
+            <div class="title">
+                Projekty JavaScript
+            </div>
+        </div>
+    </header>
+
+    <section class="btns bg-dark">
+        <div class="container">
+            <div id="btn-1" class="btn btn-item btn-border">
+                <p> Zegar </p>
+            </div>
+            <div id="btn-2" class="btn btn-item">
+                <p> Galeria </p>
+            </div>
+            <div id="btn-3" class="btn btn-item">
+                <p> Licznik </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div id="btn-1-project" class="btn-project-item show">
+            <div class="clock">
+                <div class="circle"></div>
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand min-hand"></div>
+                    <div class="hand second-hand"></div>
+                </div>
+
+                <ul>
+                    <li><span>12</span></li>
+                    <li><span>3</span></li>
+                    <li><span>6</span></li>
+                    <li><span>9</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="btn-2-project" class="btn-project-item">
+            <div class="panels">
+                <div class="panel panel1">
+                    <p>Hey</p>
+                    <p>Let's</p>
+                    <p>Dance</p>
+                </div>
+                <div class="panel panel2">
+                    <p>Give</p>
+                    <p>Take </p>
+                    <p>Receive</p>
+                </div>
+                <div class="panel panel3">
+                    <p>Experience</p>
+                    <p>It </p>
+                    <p>Today</p>
+                </div>
+            </div>
+        </div>
+        <div id="btn-3-project" class="btn-project-item">
+            <div class="counter">
+                <p> Ostatni sezon BTB za: </p>
+
+                <div class="timer">
+                    <div class="y cont">
+                        <span class="y"> </span> y :
+                    </div>
+                    <div class="d cont">
+                        <span class="d"></span> d :
+                    </div>
+
+                    <div class="h cont">
+                        <span class="h"> </span> h :
+                    </div>
+                    <div class="m cont">
+                        <span class="m"> </span> m :
+                    </div>
+                    <div class="s cont">
+                        <span class="s"> </span> s
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <footer class="center bg-dark">
+        <p> Niemiec Luiza &copy; </p>
+    </footer>
+
+    <script src="js/general.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/flex.js"></script>
+    <script src="js/timer.js"></script>
+
+
+</body>
+
+</html>

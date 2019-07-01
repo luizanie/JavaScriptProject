@@ -1,0 +1,272 @@
+.clock {
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    border: 6px solid #663300;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c1865b;
+    box-shadow: inset 0 0 8px black;
+    box-sizing: border-box;
+}
+
+.circle {
+    position: absolute;
+    background-color: #000;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+.hand {
+    transform-origin: 100%;
+    transition: all 0.05;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background-color: #ff7;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    top: calc(50% - 60px);
+    left: calc(50% - 5px);
+    transform: rotate(360deg);
+}
+
+.min-hand {
+    position: absolute;
+    width: 6px;
+    height: 90px;
+    background-color: #000;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    top: calc(50% - 90px);
+    left: calc(50% - 3px);
+    transform: rotate(90deg);
+}
+
+.second-hand {
+    position: absolute;
+    width: 2px;
+    height: 90px;
+    background-color: red;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    top: calc(50% - 90px);
+    left: calc(50% - 1px);
+    transform: rotate(360deg);
+}
+
+.clock ul {
+    list-style: none;
+    padding: 0;
+}
+
+.clock ul li {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 20px;
+    color: #4d290f;
+}
+
+/* 12 */
+.clock li:first-child {
+    right: calc(50% - 10px + 0.5rem);
+    top: 5%;
+}
+
+/* 3 */
+ul li:nth-child(2) {
+    right: 5%;
+    top: calc(50% - 10px);
+}
+
+/* 6 */
+ul li:nth-child(3) {
+    right: calc(50% - 10px);
+    bottom: 5%;
+}
+
+/* 9 */
+ul li:last-child {
+    left: 5%;
+    top: calc(50% - 10px);
+}
+
+
+
+@media (orientation: portrait) and (min-width: 600px) {
+    .circle {
+        left: calc(50% - 15px);
+        top: calc(50% - 15px);
+        width: 30px;
+        height: 30px;
+    }
+
+    .clock {
+        border: 10px solid #663300;
+    }
+
+    .hour-hand {
+        width: 16px;
+        height: 120px;
+        top: calc(50% - 120px);
+        left: calc(50% - 8px);
+    }
+
+    .min-hand {
+        width: 14px;
+        height: 180px;
+        top: calc(50% - 180px);
+        left: calc(50% - 7px);
+    }
+
+    .second-hand {
+        width: 12px;
+        height: 160px;
+        top: calc(50% - 160px);
+        left: calc(50% - 6px);
+    }
+
+    .clock ul li {
+        font-size: 4rem;
+    }
+
+    .clock li:first-child {
+        right: calc(50% - 10px + 1rem);
+        top: 5%;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 1024px) {
+    .clock {
+        border-width: 16px;
+    }
+
+    .circle {
+        width: 40px;
+        height: 40px;
+        left: calc(50% - 20px);
+        top: calc(50% - 20px);
+    }
+
+    .hour-hand {
+        height: 140px;
+        top: calc(50% - 140px);
+    }
+
+    .min-hand {
+        height: 200px;
+        top: calc(50% - 200px);
+    }
+
+    .second-hand {
+        height: 180px;
+        top: calc(50% - 180px);
+    }
+}
+
+
+@media (orientation: landscape) {
+    .circle {
+        width: 10px;
+        height: 10px;
+        left: calc(50% - 5px);
+        top: calc(50% - 5px);
+    }
+
+    .hour-hand {
+        width: 6px;
+        height: 40px;
+        top: calc(50% - 40px);
+        left: calc(50% - 3px);
+    }
+
+    .min-hand {
+        height: 70px;
+        top: calc(50% - 70px);
+    }
+
+    .second-hand {
+        height: 80px;
+        top: calc(50% - 80px);
+    }
+}
+
+@media (orientation:landscape) and (min-width:600px) {
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        left: calc(50% - 10px);
+        top: calc(50% - 10px);
+    }
+
+    .hour-hand {
+        height: 40px;
+        top: calc(50% - 40px);
+    }
+
+    .min-hand {
+        height: 80px;
+        top: calc(50% - 80px);
+    }
+
+    .second-hand {
+        height: 90px;
+        top: calc(50% - 90px);
+    }
+}
+
+@media (orientation:landscape) and (min-width: 1024px) {
+    .clock {
+        border: 10px solid #663300;
+    }
+
+    .hour-hand {
+        height: 60px;
+        top: calc(50% - 60px);
+    }
+
+    .min-hand {
+        height: 100px;
+        top: calc(50% - 100px);
+    }
+
+    .second-hand {
+        height: 90px;
+        top: calc(50% - 90px);
+    }
+
+}
+
+@media (orientation:landscape) and (min-width: 1200px) {
+
+
+    .hour-hand {
+        height: 50px;
+        top: calc(50% - 50px);
+    }
+
+    .min-hand {
+        height: 80px;
+        top: calc(50% - 80px);
+    }
+
+    .second-hand {
+        height: 90px;
+        top: calc(50% - 90px);
+    }
+}

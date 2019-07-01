@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=latin-ext');
+
+
+body {
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/gen/imga.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-content {
+    z-index: 2;
+}
+
+.header-content .logo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 60vh;
+}
+
+.header-content .title {
+    padding-top: 80vh;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 6px #333;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.2);
+    box-shadow: inset 30px 30px 60px #000;
+    z-index: 1;
+}
+
+/* przyciski */
+.btns {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.btns .container {
+    display: flex;
+}
+
+.btns .container .btn {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-content: center;
+    align-items: center;
+    color: #999;
+}
+
+.btns .container>div>p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btns .container>div:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.btn-border {
+    border-bottom: 2px solid #ddd;
+}
+
+
+
+.show {
+    display: block !important;
+}
+
+#btn-1-project,
+#btn-2-project,
+#btn-3-project {
+    display: none;
+}
+
+/* zawartosc */
+.btn-project-item {
+    height: 70vh;
+    margin: 20px 0;
+}
+
+footer p {
+    color: #999;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.bg-dark {
+    background: #333;
+    color: #f4f4f4;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+@media (orientation: portrait) and (min-width: 600px) {
+    .header-content .title {
+        font-size: 4rem;
+    }
+
+    .btns .container>div>p {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 736px) {
+    .header-content .title {
+        font-size: 4rem;
+    }
+
+    .btns .container>div>p {
+        font-size: 1.7rem;
+    }
+
+    footer p {
+        font-size: 1.7rem;
+    }
+}
+
+@media (orientation:landscape) and (min-width:992px) {
+
+    .header::after {
+        box-shadow: inset 60px 60px 80px #000;
+    }
+
+    .header-content .title {
+        font-size: 4.5rem;
+    }
+
+    .btns .container>div>p {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 2rem;
+    }
+}

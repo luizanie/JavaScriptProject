@@ -1,0 +1,103 @@
+.panels {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70vh;
+    flex: 1;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    transition:
+        font-size 0.7s cubic-bezier(0.1, -0.8, 0.6, -0.1),
+        flex 0.7s cubic-bezier(0.6, -0.2, 0.7, -0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.panel1 {
+    background-image: url(../img/flex/img1.jpg)
+}
+
+.panel2 {
+    background-image: url(../img/flex/img2.jpg);
+}
+
+.panel3 {
+    background-image: url(../img/flex/img3.jpg);
+}
+
+.panel>* {
+    display: flex;
+    flex: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel>*:first-child {
+    transform: translateY(-100%);
+}
+
+.panel.open-active>*:first-child {
+    transform: translateY(0);
+}
+
+.panel>*:last-child {
+    transform: translateY(100%);
+}
+
+.panel.open-active>*:last-child {
+    transform: translateY(0);
+}
+
+.panel>p {
+    text-transform: uppercase;
+    font-family: arial;
+    text-shadow: 0 0 8px #000;
+    font-size: 1em;
+}
+
+.panel p:nth-child(2) {
+    font-size: 1.3em;
+}
+
+.open {
+    font-size: 1.8em;
+    flex: 2;
+}
+
+@media (orientation:portrait) and (min-width:600px) {
+
+    .panel p:nth-child(2) {
+        font-size: 2.5em;
+    }
+
+    .open {
+        font-size: 2.7em;
+        flex: 2;
+    }
+}
+
+
+@media (orientation:landscape) and (min-width:992px) {
+
+    .panel p:nth-child(2) {
+        font-size: 3em;
+    }
+
+    .open {
+        font-size: 2.2em;
+        flex: 2;
+    }
+
+}
