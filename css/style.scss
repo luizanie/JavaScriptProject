@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=latin-ext');
+
+@import "./clock.scss";
+@import "./flex.scss";
+@import "./timer.scss";
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+
+body {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/gen/imga.JPG);
+    background-size: cover;
+    box-shadow:
+        inset 20px 80px 100px #000,
+        inset -20px 0px 60px #000;
+
+
+    .header-content {
+        z-index: 2;
+
+
+        .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 50vh;
+        }
+
+        .title {
+            position: relative;
+            width: 300px;
+            top: 80vh;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            // line-height: 3rem;
+            padding: 10px 0;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: rgb(126, 45, 14);
+            border-radius: 30px;
+            background: rgba(200, 170, 130, 0.6);
+
+        }
+    }
+}
+
+.btns {
+    width: 100vw;
+    overflow: hidden;
+
+    .container {
+        display: flex;
+
+        .btn {
+            @include flexCenter(column);
+            flex: 1;
+            color: #999;
+        }
+
+        .btn-border {
+            border-bottom: 2px solid #ddd;
+        }
+
+        div>p {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        div:hover {
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+.show {
+    display: block !important;
+}
+
+#btn-1-project,
+#btn-2-project,
+#btn-3-project {
+    display: none;
+}
+
+.btn-project-item {
+    height: 70vh;
+    margin: 20px 0;
+}
+
+
+footer {
+    p {
+        color: #999;
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+
+.bg-dark {
+    background: #333;
+    color: #f4f4f4;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+// @media (orientation: portrait) and (min-width: 600px) {
+//     .header-content .title {
+//         font-size: 4rem;
+//     }
+
+//     .btns .container>div>p {
+//         font-size: 1.5rem;
+//     }
+
+//     footer p {
+//         font-size: 1.5rem;
+//     }
+// }
+
+// @media (orientation: landscape) and (min-width: 736px) {
+//     .header-content .title {
+//         font-size: 4rem;
+//     }
+
+//     .btns .container>div>p {
+//         font-size: 1.7rem;
+//     }
+
+//     footer p {
+//         font-size: 1.7rem;
+//     }
+// }
+
+// @media (orientation:landscape) and (min-width:992px) {
+
+//     .header::after {
+//         box-shadow: inset 60px 60px 80px #000;
+//     }
+
+//     .header-content .title {
+//         font-size: 4.5rem;
+//     }
+
+//     .btns .container>div>p {
+//         font-size: 1.5rem;
+//     }
+
+//     footer p {
+//         font-size: 2rem;
+//     }
+// }
