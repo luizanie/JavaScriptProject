@@ -4,16 +4,23 @@
 @import "./flex.scss";
 @import "./timer.scss";
 
-@mixin flexCenter($direction) {
+@mixin flexCenter() {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: $direction;
 }
 
+$colors:(back:rgba(0, 0, 0, 0.2),
+    primary:rgb(126, 45, 14),
+    primary-light:darken(rgb(126, 45, 14), 5%),
+    secondary:rgba(200, 170, 130, 0.6),
+);
+
+@function color($colorName) {
+    @return map-get($colors, $colorName)
+}
 
 body {
-    background: rgba(0, 0, 0, 0.6);
     margin: 0;
     padding: 0;
     color: #fff;
@@ -50,33 +57,41 @@ body {
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
-            // line-height: 3rem;
             padding: 10px 0;
             font-size: 2.4rem;
             font-weight: 800;
-            color: rgb(126, 45, 14);
+            color: color(primary);
             border-radius: 30px;
-            background: rgba(200, 170, 130, 0.6);
+            background: color(secondary);
 
         }
     }
 }
 
 .btns {
+    position: absolute;
+    top: 100vh;
+    right: 0;
     width: 100vw;
+    // height: 50vh;
     overflow: hidden;
+    background: color(primary-light);
+    z-index: 2;
 
     .container {
-        display: flex;
 
-        .btn {
-            @include flexCenter(column);
-            flex: 1;
-            color: #999;
+        @include flexCenter();
+
+        .burger {
+            position: absolute;
+            top: 0;
+            right: 10px;
         }
 
-        .btn-border {
-            border-bottom: 2px solid #ddd;
+        .btn {
+            @include flexCenter();
+            // flex: 1;
+            color: #fff;
         }
 
         div>p {
@@ -87,7 +102,6 @@ body {
 
         div:hover {
             cursor: pointer;
-            color: #fff;
         }
     }
 }
@@ -113,8 +127,10 @@ body {
 
 footer {
     p {
-        color: #999;
-        font-size: 1rem;
+        color: #ddd;
+        letter-spacing: 1px;
+        background: color(primary-light);
+        font-size: 1.2rem;
         font-family: 'Roboto', sans-serif;
         margin: 0;
         padding: 20px;
@@ -122,11 +138,6 @@ footer {
     }
 }
 
-
-.bg-dark {
-    background: #333;
-    color: #f4f4f4;
-}
 
 
 body::-webkit-scrollbar {
