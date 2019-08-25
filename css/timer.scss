@@ -1,88 +1,90 @@
+@import './var.scss';
+
 .counter {
-    display: flex;
+    @include flexCenter();
     flex-direction: column;
     width: 100%;
     height: 70vh;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
-}
+    // color: color(primary-dark);
+    // color: blue;
+    color: red;
 
-p {
-    font-size: 3rem;
-    padding: 10px;
-}
+    p {
+        font-size: 3rem;
+        padding: 10px;
+    }
 
-.timer {
-    display: flex;
-}
+    .timer {
+        display: flex;
 
-.cont {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    font-size: 1.2rem;
-    color: #fff;
-}
+        .cont {
+            @include flexCenter();
+            padding: 5px;
+            font-size: 1.1rem;
 
-.timer>.cont>span {
-    padding: 5px;
+            span {
+                padding: 5px;
+            }
+
+        }
+    }
+
 }
 
 .hid {
     display: none;
 }
 
-@media (orientation: portrait) and (min-width: 600px) {
-    p {
-        font-size: 5rem;
-    }
 
-    .cont {
-        font-size: 2.5rem;
-    }
-}
+// @media (orientation: portrait) and (min-width: 600px) {
+//     p {
+//         font-size: 5rem;
+//     }
 
-@media (orientation: portrait) and (min-width: 1024px) {
-    p {
-        font-size: 6rem;
-    }
+//     .cont {
+//         font-size: 2.5rem;
+//     }
+// }
 
-    .cont {
-        font-size: 5rem;
-    }
-}
+// @media (orientation: portrait) and (min-width: 1024px) {
+//     p {
+//         font-size: 6rem;
+//     }
 
+//     .cont {
+//         font-size: 5rem;
+//     }
+// }
 
-@media (orientation: landscape) {
-    p {
-        font-size: 3rem;
-    }
+// @media (orientation: landscape) {
+//     p {
+//         font-size: 3rem;
+//     }
 
-    .cont {
-        font-size: 1.5rem;
-    }
+//     .cont {
+//         font-size: 1.5rem;
+//     }
 
-}
+// }
 
-@media (orientation:landscape) and (min-width:600px) {
-    p {
-        font-size: 3.5rem;
-    }
+// @media (orientation:landscape) and (min-width:600px) {
+//     p {
+//         font-size: 3.5rem;
+//     }
 
-    .cont {
-        font-size: 2.5rem;
-    }
-}
+//     .cont {
+//         font-size: 2.5rem;
+//     }
+// }
 
-@media (orientation:landscape) and (min-width: 900px) {
-    p {
-        font-size: 4rem;
-    }
+// @media (orientation:landscape) and (min-width: 900px) {
+//     p {
+//         font-size: 4rem;
+//     }
 
-    .cont {
-        font-size: 3.5rem;
-    }
-}
+//     .cont {
+//         font-size: 3.5rem;
+//     }
+// }

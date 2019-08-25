@@ -4,23 +4,11 @@
 @import "./flex.scss";
 @import "./timer.scss";
 
-@mixin flexCenter() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import "./var.scss";
 
-$colors:(back:rgba(0, 0, 0, 0.2),
-    primary:rgb(126, 45, 14),
-    primary-light:darken(rgb(126, 45, 14), 5%),
-    secondary:rgba(200, 170, 130, 0.6),
-);
-
-@function color($colorName) {
-    @return map-get($colors, $colorName)
-}
 
 body {
+    background-color: color(secondary);
     margin: 0;
     padding: 0;
     color: #fff;
@@ -34,8 +22,8 @@ body {
     background-image: url(../img/gen/imga.JPG);
     background-size: cover;
     box-shadow:
-        inset 20px 80px 100px #000,
-        inset -20px 0px 60px #000;
+        inset 20px 40px 120px #000,
+        inset -10px 0px 40px #000;
 
 
     .header-content {
@@ -75,11 +63,10 @@ body {
     width: 100vw;
     // height: 50vh;
     overflow: hidden;
-    background: color(primary-light);
+    background: color(primary-dark);
     z-index: 2;
 
     .container {
-
         @include flexCenter();
 
         .burger {
@@ -90,12 +77,12 @@ body {
 
         .btn {
             @include flexCenter();
-            // flex: 1;
-            color: #fff;
+            flex: 1;
+            color: #ddd;
         }
 
         div>p {
-            font-size: 1rem;
+            font-size: 4rem;
             text-transform: uppercase;
             font-family: 'Roboto', sans-serif;
         }
@@ -129,7 +116,7 @@ footer {
     p {
         color: #ddd;
         letter-spacing: 1px;
-        background: color(primary-light);
+        background: color(primary-dark);
         font-size: 1.2rem;
         font-family: 'Roboto', sans-serif;
         margin: 0;
