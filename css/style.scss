@@ -22,7 +22,7 @@ body {
     background-image: url(../img/gen/imga.JPG);
     background-size: cover;
     box-shadow:
-        inset 20px 40px 120px #000,
+        inset 0px 10px 40px #000,
         inset -10px 0px 40px #000;
 
 
@@ -59,9 +59,8 @@ body {
 .btns {
     position: absolute;
     top: 100vh;
-    right: 0;
+    // right: 0;
     width: 100vw;
-    // height: 50vh;
     overflow: hidden;
     background: color(primary-dark);
     z-index: 2;
@@ -82,7 +81,7 @@ body {
         }
 
         div>p {
-            font-size: 4rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
             font-family: 'Roboto', sans-serif;
         }
@@ -107,10 +106,9 @@ body {
 }
 
 .btn-project-item {
-    height: 70vh;
+    height: $height;
     margin: 20px 0;
 }
-
 
 footer {
     p {
@@ -124,7 +122,6 @@ footer {
         text-align: center;
     }
 }
-
 
 
 body::-webkit-scrollbar {

@@ -1,19 +1,20 @@
 @import './var.scss';
 
 .panels {
-    @include flexCenter();
-    width: 50vw;
+    // @include flexCenter();
+    display: flex;
+    width: 100vw;
+    height: $height;
     overflow: hidden;
 
 
     .panel {
         @include flexCenter();
-
         flex-direction: column;
-        width: 70%;
-        height: 70vh;
+        // width: 100%;
+        color: red;
+        height: 100vh;
         flex: 1;
-        color: #fff;
         font-size: 15px;
         text-align: center;
         transition:
@@ -34,16 +35,8 @@
             transform: translateY(-100%);
         }
 
-        .open-active>*:first-child {
-            transform: translateY(0);
-        }
-
         &>*:last-child {
             transform: translateY(100%);
-        }
-
-        .open-active>*:last-child {
-            transform: translateY(0);
         }
 
         &>p {
@@ -70,6 +63,14 @@
     .panel3 {
         background-image: url(../img/flex/img3.jpg);
     }
+}
+
+.panel.open-active>*:first-child {
+    transform: translateY(0);
+}
+
+.panel.open-active>*:last-child {
+    transform: translateY(0);
 }
 
 .open {

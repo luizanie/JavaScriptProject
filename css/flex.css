@@ -2,13 +2,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50vw;
+  width: 100vw;
+  height: 85vh;
   overflow: hidden;
 }
 
@@ -26,12 +21,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70%;
-  height: 70vh;
+  color: red;
+  height: 100vh;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  color: #fff;
   font-size: 15px;
   text-align: center;
   -webkit-transition: font-size 0.7s cubic-bezier(0.1, -0.8, 0.6, -0.1), -webkit-box-flex 0.7s cubic-bezier(0.6, -0.2, 0.7, -0.1);
@@ -67,19 +61,9 @@
           transform: translateY(-100%);
 }
 
-.panels .panel .open-active > *:first-child {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
 .panels .panel > *:last-child {
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-}
-
-.panels .panel .open-active > *:last-child {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
 }
 
 .panels .panel > p {
@@ -103,6 +87,16 @@
 
 .panels .panel3 {
   background-image: url(../img/flex/img3.jpg);
+}
+
+.panel.open-active > *:first-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.panel.open-active > *:last-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .open {

@@ -2,13 +2,13 @@
   position: relative;
   width: 50vh;
   height: 50vh;
-  border: 10px solid color(primary);
+  border: 10px solid #7e2d0e;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: color(secondary-dark);
+  background: blue;
   -webkit-box-shadow: inset 0 0 8px black;
           box-shadow: inset 0 0 8px black;
   -webkit-box-sizing: border-box;
