@@ -7,12 +7,12 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: blue;
-  -webkit-box-shadow: inset 0 0 8px black;
-          box-shadow: inset 0 0 8px black;
+  transform: translate(-50%, -50%);
+  background: rgba(200, 170, 130, 0.6);
+  -webkit-box-shadow: inset 0 0 8px #342817;
+  box-shadow: inset 0 0 8px #342817;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .clock .circle {
@@ -21,18 +21,18 @@
   top: calc(50% - 10px);
   width: 20px;
   height: 20px;
-  background: #000;
+  background: #fff;
   border-radius: 50%;
   z-index: 2;
 }
 
 .clock .hand {
   -webkit-transform-origin: 100%;
-          transform-origin: 100%;
+  transform-origin: 100%;
   -webkit-transition: all 0.05;
   transition: all 0.05;
   -webkit-transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 .clock .hour-hand {
@@ -42,12 +42,12 @@
   border-radius: 100px;
   background-color: red;
   -webkit-transform-origin: bottom center;
-          transform-origin: bottom center;
+  transform-origin: bottom center;
   border-radius: 4px;
   top: calc(50% - 100px);
   left: calc(50% - 10px);
   -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .clock .min-hand {
@@ -56,26 +56,26 @@
   height: 90px;
   background-color: #000;
   -webkit-transform-origin: bottom center;
-          transform-origin: bottom center;
+  transform-origin: bottom center;
   border-radius: 4px;
   top: calc(50% - 90px);
   left: calc(50% - 3px);
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .clock .second-hand {
   position: absolute;
   width: 2px;
   height: 90px;
-  background-color: blue;
+  background-color: green;
   -webkit-transform-origin: bottom center;
-          transform-origin: bottom center;
+  transform-origin: bottom center;
   border-radius: 4px;
   top: calc(50% - 90px);
   left: calc(50% - 1px);
   -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .clock ul {
@@ -112,4 +112,5 @@
   left: 5%;
   top: calc(50% - 10px);
 }
+
 /*# sourceMappingURL=clock.css.map */

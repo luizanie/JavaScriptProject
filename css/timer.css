@@ -20,7 +20,7 @@
 }
 
 .counter p {
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 10px;
 }
 
@@ -33,6 +33,18 @@
 .counter .timer .cont {
   padding: 5px;
   font-size: 1.1rem;
+}
+
+@media (min-width: 600px) {
+  .counter .timer .cont {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .counter .timer .cont {
+    font-size: 3.4rem;
+  }
 }
 
 .counter .timer .cont span {

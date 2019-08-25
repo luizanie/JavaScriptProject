@@ -1,4 +1,4 @@
-@import './var.scss';
+@import './var';
 
 .panels {
     // @include flexCenter();
@@ -7,14 +7,13 @@
     height: $height;
     overflow: hidden;
 
-
     .panel {
         @include flexCenter();
         flex-direction: column;
-        // width: 100%;
-        color: red;
+        width: 100%;
+        color: color(primary);
         height: 100vh;
-        flex: 1;
+        // flex: 1;
         font-size: 15px;
         text-align: center;
         transition:
@@ -22,6 +21,7 @@
             flex 0.7s cubic-bezier(0.6, -0.2, 0.7, -0.1);
         background-size: cover;
         background-position: center;
+
 
         &>* {
             @include flexCenter();
@@ -42,8 +42,9 @@
         &>p {
             text-transform: uppercase;
             font-family: arial;
-            text-shadow: 0 0 8px #ddd;
             font-size: 1em;
+            font-weight: 700;
+            text-shadow: 0 0 3px #344;
         }
 
         p:nth-child(2) {
@@ -63,19 +64,21 @@
     .panel3 {
         background-image: url(../img/flex/img3.jpg);
     }
+
+    .open {
+        font-size: 1.8em;
+        flex: 2;
+    }
 }
 
 .panel.open-active>*:first-child {
     transform: translateY(0);
+    margin-top: 20px;
 }
 
 .panel.open-active>*:last-child {
     transform: translateY(0);
-}
-
-.open {
-    font-size: 1.8em;
-    flex: 2;
+    margin-bottom: 20px;
 }
 
 // @media (orientation:portrait) and (min-width:600px) {

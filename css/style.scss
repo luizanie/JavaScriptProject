@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=latin-ext');
 
-@import "./clock.scss";
-@import "./flex.scss";
-@import "./timer.scss";
+@import "./clock";
+@import "./flex";
+@import './timer';
 
-@import "./var.scss";
+@import './var';
 
 
 body {
@@ -41,7 +41,7 @@ body {
         .title {
             position: relative;
             width: 300px;
-            top: 80vh;
+            top: 70vh;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -52,6 +52,14 @@ body {
             border-radius: 30px;
             background: color(secondary);
 
+            @include porTablets {
+                font-size: 4rem;
+                width: 400px;
+            }
+
+            @include landTablets {
+                top: 75vh;
+            }
         }
     }
 }
@@ -78,12 +86,25 @@ body {
             @include flexCenter();
             flex: 1;
             color: #ddd;
+            border-right: 0.5px solid color(secondary);
+
+            @include landTablets {
+                border-width: 2px;
+            }
+        }
+
+        .btn:last-child {
+            border: none;
         }
 
         div>p {
             font-size: 1.5rem;
             text-transform: uppercase;
             font-family: 'Roboto', sans-serif;
+
+            @include landTablets {
+                font-size: 2.5rem;
+            }
         }
 
         div:hover {
@@ -120,6 +141,10 @@ footer {
         margin: 0;
         padding: 20px;
         text-align: center;
+
+        @include landTablets {
+            font-size: 2.2rem;
+        }
     }
 }
 
@@ -128,50 +153,4 @@ body::-webkit-scrollbar {
     width: 0px;
 }
 
-
-// @media (orientation: portrait) and (min-width: 600px) {
-//     .header-content .title {
-//         font-size: 4rem;
-//     }
-
-//     .btns .container>div>p {
-//         font-size: 1.5rem;
-//     }
-
-//     footer p {
-//         font-size: 1.5rem;
-//     }
-// }
-
-// @media (orientation: landscape) and (min-width: 736px) {
-//     .header-content .title {
-//         font-size: 4rem;
-//     }
-
-//     .btns .container>div>p {
-//         font-size: 1.7rem;
-//     }
-
-//     footer p {
-//         font-size: 1.7rem;
-//     }
-// }
-
-// @media (orientation:landscape) and (min-width:992px) {
-
-//     .header::after {
-//         box-shadow: inset 60px 60px 80px #000;
-//     }
-
-//     .header-content .title {
-//         font-size: 4.5rem;
-//     }
-
-//     .btns .container>div>p {
-//         font-size: 1.5rem;
-//     }
-
-//     footer p {
-//         font-size: 2rem;
-//     }
-// }
+;

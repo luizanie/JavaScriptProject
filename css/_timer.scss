@@ -1,0 +1,52 @@
+@import './var';
+
+.counter {
+    @include flexCenter();
+    flex-direction: column;
+    width: 100%;
+    height: $height;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: color(primary-dark);
+
+    p {
+        font-size: 2.5rem;
+        padding: 10px;
+
+        @include porTablets {
+            font-size: 3rem;
+        }
+
+        @include laptops {
+            font-size: 4rem;
+        }
+    }
+
+    .timer {
+        display: flex;
+
+        .cont {
+            // @include flexCenter();
+            padding: 5px;
+            font-size: 1.1rem;
+
+            @include porTablets {
+                font-size: 3.5rem;
+            }
+
+            @include laptops {
+                font-size: 4.5rem;
+            }
+
+            span {
+                padding: 5px;
+            }
+
+        }
+    }
+
+}
+
+.hid {
+    display: none;
+}

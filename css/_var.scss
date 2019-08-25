@@ -1,0 +1,51 @@
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$height:85vh;
+
+$colors:(back:rgba(0, 0, 0, 0.2),
+    primary:rgb(126, 45, 14),
+    primary-dark:darken(rgb(126, 45, 14), 5%),
+    secondary:rgba(200, 170, 130, 0.6),
+    secondary-dark:darken(rgb(200, 170, 130), 50%),
+);
+
+@function color($colorName) {
+    @return map-get($colors, $colorName)
+}
+
+
+$porTablets:600px;
+
+@mixin porTablets {
+    @media(min-width:#{$porTablets}) {
+        @content;
+    }
+}
+
+$landTablets:768px;
+
+@mixin landTablets {
+    @media(min-width:#{$landTablets}) {
+        @content;
+    }
+}
+
+$laptops:1024px;
+
+@mixin laptops {
+    @media(min-width:#{$laptops}) {
+        @content;
+    }
+}
+
+// $landscape: orientation landscape;
+
+// @mixin landscape {
+//     @media(min-width:#{$landscape}) {
+//         @content;
+//     }
+// }

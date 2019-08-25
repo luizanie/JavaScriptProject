@@ -9,11 +9,25 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: red;
-  -webkit-box-shadow: inset 0 0 8px black;
-          box-shadow: inset 0 0 8px black;
+  background: rgba(200, 170, 130, 0.6);
+  -webkit-box-shadow: inset 0 0 20px #342817;
+          box-shadow: inset 0 0 20px #342817;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .clock {
+    border-width: 15px;
+  }
+}
+
+@media (min-width: 600px) {
+  .clock {
+    top: 60%;
+    width: 60vh;
+    height: 60vh;
+  }
 }
 
 .clock .circle {
@@ -27,7 +41,17 @@
   z-index: 2;
 }
 
+@media (min-width: 600px) {
+  .clock .circle {
+    left: calc(50% - 13px);
+    top: calc(50% - 13px);
+    width: 26px;
+    height: 26px;
+  }
+}
+
 .clock .hand {
+  border-radius: 4px;
   -webkit-transform-origin: 100%;
           transform-origin: 100%;
   -webkit-transition: all 0.05;
@@ -39,37 +63,59 @@
 .clock .hour-hand {
   position: absolute;
   width: 5px;
-  height: 100px;
-  border-radius: 100px;
-  background-color: red;
+  height: 80px;
+  background-color: #ac2f05;
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
-  border-radius: 4px;
-  top: calc(50% - 100px);
-  left: calc(50% - 10px);
+  top: calc(50% - 80px);
+  left: calc(50% - 2.5px);
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+@media (min-width: 600px) {
+  .clock .hour-hand {
+    height: 140px;
+    width: 10px;
+    top: calc(50% - 140px);
+    left: calc(50% - 5px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .clock .hour-hand {
+    height: 160px;
+    top: calc(50% - 160px);
+  }
 }
 
 .clock .min-hand {
   position: absolute;
   width: 6px;
   height: 90px;
+  top: calc(50% - 90px);
+  left: calc(50% - 3px);
   background-color: #000;
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
-  border-radius: 4px;
-  top: calc(50% - 90px);
-  left: calc(50% - 3px);
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+@media (min-width: 600px) {
+  .clock .min-hand {
+    width: 8px;
+    height: 120px;
+    top: calc(50% - 120px);
+    left: calc(50% - 4px);
+  }
 }
 
 .clock .second-hand {
   position: absolute;
   width: 2px;
   height: 90px;
-  background-color: blue;
+  background-color: #b31525;
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
   border-radius: 4px;
@@ -77,6 +123,24 @@
   left: calc(50% - 1px);
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+@media (min-width: 600px) {
+  .clock .second-hand {
+    width: 4px;
+    height: 100px;
+    top: calc(50% - 100px);
+    left: calc(50% - 2px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .clock .second-hand {
+    width: 7px;
+    height: 200px;
+    top: calc(50% - 200px);
+    left: calc(50% - 4px);
+  }
 }
 
 .clock ul {
@@ -92,6 +156,12 @@
   font-size: 2rem;
   line-height: 20px;
   color: #4d290f;
+}
+
+@media (min-width: 600px) {
+  .clock ul li {
+    font-size: 3rem;
+  }
 }
 
 .clock ul li:first-child {
@@ -137,11 +207,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: red;
+  width: 100%;
+  color: #7e2d0e;
   height: 100vh;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   font-size: 15px;
   text-align: center;
   -webkit-transition: font-size 0.7s cubic-bezier(0.1, -0.8, 0.6, -0.1), -webkit-box-flex 0.7s cubic-bezier(0.6, -0.2, 0.7, -0.1);
@@ -185,8 +253,9 @@
 .panels .panel > p {
   text-transform: uppercase;
   font-family: arial;
-  text-shadow: 0 0 8px #ddd;
   font-size: 1em;
+  font-weight: 700;
+  text-shadow: 0 0 3px #344;
 }
 
 .panels .panel p:nth-child(2) {
@@ -205,21 +274,23 @@
   background-image: url(../img/flex/img3.jpg);
 }
 
+.panels .open {
+  font-size: 1.8em;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
 .panel.open-active > *:first-child {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+  margin-top: 20px;
 }
 
 .panel.open-active > *:last-child {
   -webkit-transform: translateY(0);
           transform: translateY(0);
-}
-
-.open {
-  font-size: 1.8em;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  margin-bottom: 20px;
 }
 
 .counter {
@@ -244,8 +315,20 @@
 }
 
 .counter p {
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 10px;
+}
+
+@media (min-width: 600px) {
+  .counter p {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .counter p {
+    font-size: 4rem;
+  }
 }
 
 .counter .timer {
@@ -257,6 +340,18 @@
 .counter .timer .cont {
   padding: 5px;
   font-size: 1.1rem;
+}
+
+@media (min-width: 600px) {
+  .counter .timer .cont {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .counter .timer .cont {
+    font-size: 4.5rem;
+  }
 }
 
 .counter .timer .cont span {
@@ -301,7 +396,7 @@ body {
 .header .header-content .title {
   position: relative;
   width: 300px;
-  top: 80vh;
+  top: 70vh;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -312,6 +407,19 @@ body {
   color: #7e2d0e;
   border-radius: 30px;
   background: rgba(200, 170, 130, 0.6);
+}
+
+@media (min-width: 600px) {
+  .header .header-content .title {
+    font-size: 4rem;
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header .header-content .title {
+    top: 75vh;
+  }
 }
 
 .btns {
@@ -355,12 +463,29 @@ body {
       -ms-flex: 1;
           flex: 1;
   color: #ddd;
+  border-right: 0.5px solid rgba(200, 170, 130, 0.6);
+}
+
+@media (min-width: 768px) {
+  .btns .container .btn {
+    border-width: 2px;
+  }
+}
+
+.btns .container .btn:last-child {
+  border: none;
 }
 
 .btns .container div > p {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .btns .container div > p {
+    font-size: 2.5rem;
+  }
 }
 
 .btns .container div:hover {
@@ -391,6 +516,12 @@ footer p {
   margin: 0;
   padding: 20px;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  footer p {
+    font-size: 2.2rem;
+  }
 }
 
 body::-webkit-scrollbar {
